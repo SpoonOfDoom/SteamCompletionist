@@ -9,6 +9,10 @@
         private $persistent;
         private $engine;
         private $options;
+        public $logger;
+        public $db;
+        public $session;
+        public $openId;
 
         function __construct()
         {
