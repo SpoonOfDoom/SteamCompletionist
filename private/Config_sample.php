@@ -1,34 +1,38 @@
 <?php
-    //Add your settings and rename this file to Config.php
-    class Config
+/**
+ * Class Config holds project-wide configurations and settings
+ * Adjust as desired.
+ *
+ * @author Felix Kastner <felix@chapterfain.com>
+ */
+class Config
+{
+    public $db = array();
+    public $session = array();
+    /**
+     * Constructor.
+     */
+    public function __construct()
     {
-        private $host;
-        private $user;
-        private $pass;
-        private $schema;
-        private $port;
-        private $persistent;
-        private $engine;
-        private $options;
-        public $steam;
-        public $logger;
-        public $db;
-        public $session;
-        public $openId;
-
-        function __construct()
-        {
-        	$this->db['host'] = "localhost";
-            $this->db['user'] = "myUser";
-            $this->db['pass'] = "myPassword";
-            $this->db['schema'] = "mySchema";
-            $this->db['port'] = "myPort(3306?)";
-            $this->db['persistent'] = "myPersistent";
-            $this->db['engine'] = "mysql";
-            $this->db['options'] = array();
-
-            $this->steam['key'] = "myKey";
-        }
-        
+        $this->db['host'] = 'localhost';
+        $this->db['user'] = 'username';
+        $this->db['pass'] = 'password';
+        $this->db['schema'] = 'schema';
+        $this->db['port'] = 3306;
+        $this->db['persistent'] = true;
+        $this->db['engine'] = 'mysql';
+        $this->db['options'] = array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+                                     PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC);
+        $this->session['safeword'] = 'replace_me';
+        $this->session['ipcheck'] = 2;
+        $this->session['authTable'] = 'steamUserDB';
+        $this->session['userColumn'] = 'steamid';
+        $this->session['cookieLifetime'] = 30758400;
+        $this->openId['host'] = 'http://www.sample.net';
+        $this->openId['identity'] = 'http://steamcommunity.com/openid';
+        $this->openId['return'] = 'http://www.sample.net';
+        $this->logger['debugLog'] = false;
+        $this->logger['userLog'] = true;
+        $this->steam['key'] = 'KEY_GOES_HERE';
     }
-?>
+}
