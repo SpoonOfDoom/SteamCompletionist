@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Name>SteamCompletionist</Name>
+    <ProjectGuid>{1618955e-4cca-472e-8202-79b58ba9a8c2}</ProjectGuid>
+    <RootNamespace>SteamCompletionist</RootNamespace>
+    <OutputType>Library</OutputType>
+    <ProjectTypeGuids>{A0786B88-2ADB-4C21-ABE8-AA2D79766269}</ProjectTypeGuids>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <IncludeDebugInformation>true</IncludeDebugInformation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <IncludeDebugInformation>false</IncludeDebugInformation>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="httpdocs\Classes\Common\AutoLoader\AutoLoader.php" />
+    <Compile Include="httpdocs\Classes\Common\Database\DatabaseInterface.php" />
+    <Compile Include="httpdocs\Classes\Common\Database\DatabaseTrait.php" />
+    <Compile Include="httpdocs\Classes\Common\Database\DBInitializer.php" />
+    <Compile Include="httpdocs\Classes\Common\Database\MySqlDb.php" />
+    <Compile Include="httpdocs\Classes\Common\Database\PdoDb.php" />
+    <Compile Include="httpdocs\Classes\Common\DI\Pimple.php" />
+    <Compile Include="httpdocs\Classes\Common\Logger\DbLogger.php" />
+    <Compile Include="httpdocs\Classes\Common\Logger\LoggerInterface.php" />
+    <Compile Include="httpdocs\Classes\Common\OpenID\LightOpenID.php" />
+    <Compile Include="httpdocs\Classes\Common\Template\Template.php" />
+    <Compile Include="httpdocs\Classes\Common\User\User.php" />
+    <Compile Include="httpdocs\Classes\Common\Util\Util.php" />
+    <Compile Include="httpdocs\Classes\SteamCompletionist\Html\WebSite.php" />
+    <Compile Include="httpdocs\Classes\SteamCompletionist\Steam\SteamGame.php" />
+    <Compile Include="httpdocs\Classes\SteamCompletionist\Steam\SteamUser.php" />
+    <Compile Include="httpdocs\Classes\SteamCompletionist\Steam\SteamUserSearch.php" />
+    <Compile Include="httpdocs\css\images\animated-overlay.gif" />
+    <Compile Include="httpdocs\css\images\ui-bg_flat_30_cccccc_40x100.png" />
+    <Compile Include="httpdocs\css\images\ui-bg_flat_50_5c5c5c_40x100.png" />
+    <Compile Include="httpdocs\css\images\ui-bg_glass_20_555555_1x400.png" />
+    <Compile Include="httpdocs\css\images\ui-bg_glass_40_0078a3_1x400.png" />
+    <Compile Include="httpdocs\css\images\ui-bg_glass_40_ffc73d_1x400.png" />
+    <Compile Include="httpdocs\css\images\ui-bg_gloss-wave_25_333333_500x100.png" />
+    <Compile Include="httpdocs\css\images\ui-bg_highlight-soft_80_eeeeee_1x100.png" />
+    <Compile Include="httpdocs\css\images\ui-bg_inset-soft_25_000000_1x100.png" />
+    <Compile Include="httpdocs\css\images\ui-bg_inset-soft_30_f58400_1x100.png" />
+    <Compile Include="httpdocs\css\images\ui-icons_222222_256x240.png" />
+    <Compile Include="httpdocs\css\images\ui-icons_4b8e0b_256x240.png" />
+    <Compile Include="httpdocs\css\images\ui-icons_a83300_256x240.png" />
+    <Compile Include="httpdocs\css\images\ui-icons_cccccc_256x240.png" />
+    <Compile Include="httpdocs\css\images\ui-icons_ffffff_256x240.png" />
+    <Compile Include="httpdocs\css\jquery-ui-1.10.0.custom.css" />
+    <Compile Include="httpdocs\css\jquery-ui-1.10.0.custom.min.css" />
+    <Compile Include="httpdocs\css\main.css" />
+    <Compile Include="httpdocs\css\reset.css" />
+    <Compile Include="httpdocs\img\loading.gif" />
+    <Compile Include="httpdocs\img\pbar.png" />
+    <Compile Include="httpdocs\img\preview.jpg" />
+    <Compile Include="httpdocs\img\profile.png" />
+    <Compile Include="httpdocs\img\sits_large_border.png" />
+    <Compile Include="httpdocs\img\sits_large_noborder.png" />
+    <Compile Include="httpdocs\img\sits_small.png" />
+    <Compile Include="httpdocs\js\jquery-1.8.3.min.js" />
+    <Compile Include="httpdocs\js\jquery-ui-1.10.0.custom.min.js" />
+    <Compile Include="httpdocs\js\main.js" />
+    <Compile Include="httpdocs\ajax.php" />
+    <Compile Include="httpdocs\favicon.ico" />
+    <Compile Include="httpdocs\favicon.png" />
+    <Compile Include="httpdocs\index.php" />
+    <Compile Include="private\Config.php" />
+    <Compile Include="private\Config_sample.php" />
+    <Compile Include=".gitignore" />
+    <Compile Include="README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="httpdocs\Classes\Common\AutoLoader" />
+    <Folder Include="httpdocs\Classes\Common\Database" />
+    <Folder Include="httpdocs\Classes\Common\DI" />
+    <Folder Include="httpdocs\Classes\Common\Logger" />
+    <Folder Include="httpdocs\Classes\Common\OpenID" />
+    <Folder Include="httpdocs\Classes\Common\Template" />
+    <Folder Include="httpdocs\Classes\Common\User" />
+    <Folder Include="httpdocs\Classes\Common\Util" />
+    <Folder Include="httpdocs\Classes\Common" />
+    <Folder Include="httpdocs\Classes\SteamCompletionist\Html" />
+    <Folder Include="httpdocs\Classes\SteamCompletionist\Steam" />
+    <Folder Include="httpdocs\Classes\SteamCompletionist" />
+    <Folder Include="httpdocs\Classes" />
+    <Folder Include="httpdocs\css\images" />
+    <Folder Include="httpdocs\css" />
+    <Folder Include="httpdocs\img" />
+    <Folder Include="httpdocs\js" />
+    <Folder Include="httpdocs" />
+    <Folder Include="private" />
+  </ItemGroup>
+</Project>
