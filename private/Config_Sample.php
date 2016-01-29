@@ -5,6 +5,7 @@
  *
  * @author Felix Kastner <felix@chapterfain.com>
  */
+ //Rename this file to Config.php
 class Config
 {
     public $db = array();
