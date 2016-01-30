@@ -274,7 +274,8 @@ class WebSite
                                                 data-numowned="' . $game->numOwned . '"
                                                 data-numbeaten="' . $game->numBeaten . '"
                                                 data-numblacklisted="' . $game->numBlacklisted . '"
-                                                ' . $achievements . ' />';
+                                                ' . $achievements . ' />
+                                       <p class="gametitle">' . $game->name . '</p>';
                         } else {
                             $string .= '<div class="empty_game_box"></div>';
                         }
@@ -349,6 +350,7 @@ class WebSite
                                     data-numbeaten="' . $gameObject->numBeaten . '"
                                     data-numblacklisted="' . $gameObject->numBlacklisted . '"
                                     ' . $achievements . ' />
+                                    <p class="gametitle">' . $gameObject->name . '</p>
                                  </div>';
                         }
                     }

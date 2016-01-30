@@ -239,12 +239,18 @@ div.list_box {
     margin: 1em 1em 2em 1em;
     display: inline-block;
     width: 184px;
-    height: 69px;
+    height: auto;
     border: 3px #62a7e3 solid;
     border-radius: 5px;
     overflow: hidden;
     background-color: #1A1A1A;
     vertical-align: top;
+    padding-bottom: 3px;
+}
+
+.gametitle {
+    margin: 5px;
+    line-height: 1.3em;
 }
 
 div.list_box > img.game_image {
