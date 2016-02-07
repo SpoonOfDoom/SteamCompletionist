@@ -17,6 +17,13 @@ interface DatabaseInterface
     public function connect();
 
     /**
+     * Checks if the database exists and initializes it if not.
+     * @throws \Exception Generic exception containing any errors caught
+     */
+    public function checkDb();
+    
+
+    /**
      * Prepares a statement for execution.
      * Will connect to the database if the connection has yet to be established.
      *

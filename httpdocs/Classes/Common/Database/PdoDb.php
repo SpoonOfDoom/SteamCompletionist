@@ -25,10 +25,34 @@ class PdoDb implements DatabaseInterface
                 $this->config['options'][PDO::ATTR_PERSISTENT] = true;
             }
             $this->link = new PDO($this->config['engine'] . ':host=' . $this->config['host'] . ';port=' . $this->config['port'] . ';dbname=' . $this->config['schema'] . ';charset=utf8', $this->config['user'], $this->config['pass'], $this->config['options']);
+            $this->checkDb(); //Check if the database exists
         } catch (PDOException $e) {
             throw new Exception($e->getMessage(), $e->getCode());
         }
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function checkDb()
+    {
+        try
+        {
+            $select = "select 1 from steamUserDB LIMIT 1"; //If the database exists we should be able to do this simple statement.
+        	$this->prepare($select);
+            $this->execute();
+        }
+        catch (PDOException $e) {
+            $exMessage = $e->getMessage();
+            if (strpos($exMessage, "1146 Table 'scdb.steamUserDB'") !== false)
+            {
+                echo "Database doesn't seem to exist yet. Creating it now...<br>\n";
+                $dbinit = new DBInitializer($this); //Update class to use interface
+                $dbinit->InitializeDb();
+            }
+        }
+    }
+    
 
     /**
      * {@inheritdoc}
